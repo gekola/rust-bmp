@@ -91,8 +91,8 @@ pub struct BMPimage {
     magic: BMPid,
     header: BMPheader,
     dib_header: BMPDIBheader,
-    width: i32,
-    height: i32,
+    pub width: i32,
+    pub height: i32,
     padding: i32,
     padding_data: [u8, .. 4],
     data: Option<Vec<BMPpixel>>
