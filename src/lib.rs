@@ -119,7 +119,12 @@ impl BMPimage {
     pub fn set_pixel(&mut self, x: uint, y: uint, val: BMPpixel) {
         if x < self.width as uint && y < self.height as uint {
             match self.data {
-                Some(ref mut data) => data.insert(y * (self.width as uint) + x, val),
+                Some(ref mut data) => {
+                  let pixel = data.get_mut(y * (self.width as uint) + x);
+                  pixel.r = val.r;
+                  pixel.g = val.g;
+                  pixel.b = val.b;
+                },
                 None => fail!("Image has no data")
             }
         } else {
