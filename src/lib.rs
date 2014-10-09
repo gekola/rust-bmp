@@ -11,6 +11,7 @@ pub struct BMPpixel {
 pub mod consts {
     use BMPpixel;
 
+    pub static BLACK: BMPpixel = BMPpixel{ r: 0, g: 0, b: 0 };
     pub static RED:   BMPpixel = BMPpixel{ r: 255, g: 0, b: 0 };
     pub static GREEN: BMPpixel = BMPpixel{ r: 0, g: 255, b: 0 };
     pub static BLUE:  BMPpixel = BMPpixel{ r: 0, g: 0, b: 255 };
